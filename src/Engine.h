@@ -1,8 +1,9 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
+#include <webgpu/webgpu_cpp.h>
 
-class Application {
+class Engine {
  public:
   bool Initialize();
   void Terminate();
@@ -10,5 +11,7 @@ class Application {
   bool IsRunning() const;
 
  private:
+  void logAdapterDetails(const wgpu::Adapter& adapter);
+
   GLFWwindow* window = nullptr;
 };

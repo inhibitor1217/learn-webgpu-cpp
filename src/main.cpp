@@ -4,21 +4,21 @@
 
 #include <iostream>
 
-#include "Application.h"
+#include "Engine.h"
 
 int main(int, char**) {
-  Application app;
+  Engine engine;
 
-  if (!app.Initialize()) {
-    std::cerr << "Failed to initialize application" << std::endl;
+  if (!engine.Initialize()) {
+    std::cerr << "Failed to initialize engine" << std::endl;
     return 1;
   }
 
-  while (app.IsRunning()) {
-    app.MainLoop();
+  while (engine.IsRunning()) {
+    engine.MainLoop();
   }
 
-  app.Terminate();
+  engine.Terminate();
 
   return 0;
 }

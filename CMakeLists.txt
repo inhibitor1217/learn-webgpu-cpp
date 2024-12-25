@@ -7,7 +7,7 @@ set(COMPILE_WARNING_AS_ERROR ON)
 
 add_executable(learn-webgpu-cpp
     src/main.cpp
-    src/Application.cpp)
+    src/Engine.cpp)
 
 if (MSVC)
     target_compile_options(learn-webgpu-cpp PRIVATE /W4)
