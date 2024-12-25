@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(COMPILE_WARNING_AS_ERROR ON)
 
-add_executable(learn-webgpu-cpp main.cpp)
+add_executable(learn-webgpu-cpp
+    src/main.cpp
+    src/Application.cpp)
 
 if (MSVC)
     target_compile_options(learn-webgpu-cpp PRIVATE /W4)
@@ -15,4 +17,4 @@ endif()
 
 set(DAWN_FETCH_DEPENDENCIES ON)
 add_subdirectory("dawn" EXCLUDE_FROM_ALL)
-target_link_libraries(learn-webgpu-cpp PRIVATE dawn::webgpu_dawn)
+target_link_libraries(learn-webgpu-cpp PRIVATE dawn::webgpu_dawn glfw webgpu_glfw)
