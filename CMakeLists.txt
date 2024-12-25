@@ -13,3 +13,6 @@ else()
     target_compile_options(learn-webgpu-cpp PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
+set(DAWN_FETCH_DEPENDENCIES ON)
+add_subdirectory("dawn" EXCLUDE_FROM_ALL)
+target_link_libraries(learn-webgpu-cpp PRIVATE dawn::webgpu_dawn)
